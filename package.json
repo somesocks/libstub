@@ -3,13 +3,19 @@
 	"version": "0.1.2",
 	"description": "a tiny utility for helping to link js packages at run-time",
 	"main": "dist/libstub",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {},
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:somesocks/libstub.git"
 	},
-	"keywords": ["libraries", "linking", "packages"],
+	"keywords": [
+		"libraries",
+		"linking",
+		"packages"
+	],
 	"author": "James Larsen (somesocks@gmail.com)",
 	"license": "MIT",
 	"bugs": {
@@ -32,6 +38,7 @@
 		"gulp": "3.9.1",
 		"gulp-help": "1.6.1",
 		"gulp-shell": "0.6.5",
+		"semver": "^5.5.0",
 		"uchain": "^0.14.0",
 		"uglifyjs-webpack-plugin": "1.2.2",
 		"vet": "^1.0.3",
