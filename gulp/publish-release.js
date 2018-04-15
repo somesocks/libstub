@@ -20,6 +20,7 @@ const CMD = [
 	`git commit -m "release ${TAG}" -e`,
 	`git tag ${TAG}`,
 	'git push && git push --tags',
+	'npm publish',
 ];
 
 gulp.task(
