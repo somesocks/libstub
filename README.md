@@ -1,2 +1,2 @@
-# dll-js
-a tiny utility for linking packages on the client at run-time
+# libstub
+a tiny utility for helping to link js packages at run-time
