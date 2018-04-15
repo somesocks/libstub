@@ -1,0 +1,47 @@
+{
+  "name": "libstub",
+  "version": "0.1.0",
+  "description": "a tiny utility for helping to link js packages at run-time",
+  "main": "dist/libstub",
+	"files": [
+		"dist"
+	],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:somesocks/libstub.git"
+  },
+  "keywords": [
+    "libraries",
+    "linking",
+    "packages"
+  ],
+  "author": "James Larsen (somesocks@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/somesocks/libstub/issues"
+  },
+  "homepage": "https://github.com/somesocks/libstub",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-es2015": "^6.14.0",
+    "eslint": "4.15.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.5.1",
+    "glob": "7.1.2",
+    "gulp": "3.9.1",
+    "gulp-help": "1.6.1",
+    "gulp-shell": "0.6.5",
+    "uchain": "^0.14.0",
+    "uglifyjs-webpack-plugin": "1.2.2",
+    "vet": "^1.0.3",
+    "webpack": "4.1.1",
+    "webpack-cli": "^2.0.11"
+  }
+}
