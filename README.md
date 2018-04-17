@@ -7,27 +7,27 @@ Why? Mostly to help link together JS, independent of how it was built.
 # Usage
 
 ```
-	// include libstub before these files
+  // include libstub before these files
 
-	// file a.js, wants to export module a
+  // file a.js, wants to export module a
 
-	var a = {};
+  var a = {};
 
-	libstub.provide('a', a);
+  libstub.provide('a', a);
 
 
-	// file b.js, wants to import a and export b
+  // file b.js, wants to import a and export b
 
-	var a = libstub.consume('a');
-	var b = {};
+  var a = libstub.consume('a');
+  var b = {};
 
-	libstub.provide('b', b);
+  libstub.provide('b', b);
 
 
   // file c.js, wants to import a and b.
 
-	var a = libstub.consume('a');
-	var b = libstub.consume('b');
+  var a = libstub.consume('a');
+  var b = libstub.consume('b');
 
 ```
 
@@ -51,24 +51,24 @@ A bundle can be both a provider and a consumer.
 <a name="libstub.provide"></a>
 
 ### libstub.provide
-Provide a package to use
-
-**Kind**: static property of [<code>libstub</code>](#libstub)  
-
-| Param | Description |
-| --- | --- |
-| name | the name of the package |
-| package | the package |
-
-<a name="libstub.consume"></a>
-
-### libstub.consume
-Consume a package already provided
+Provide a module to use
 
 **Kind**: static property of [<code>libstub</code>](#libstub)  
 
 | Param | Description |
 | --- | --- |
 | name | the name of the module |
-| ignoreMissing | if true, do not throw an error when the package is not found |
+| module | the module |
+
+<a name="libstub.consume"></a>
+
+### libstub.consume
+Consume a module already provided
+
+**Kind**: static property of [<code>libstub</code>](#libstub)  
+
+| Param | Description |
+| --- | --- |
+| name | the name of the module |
+| ignoreMissing | if true, do not throw an error when the module is not found |
 
