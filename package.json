@@ -44,5 +44,8 @@
 		"vet": "^1.0.3",
 		"webpack": "4.1.1",
 		"webpack-cli": "^2.0.11"
+	},
+	"dependencies": {
+		"gulp-json-editor": "^2.3.0"
 	}
 }

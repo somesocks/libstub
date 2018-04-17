@@ -6,6 +6,7 @@ require('gulp-help')(
 
 require('./build');
 require('./clean');
+require('./docs');
 
 require('./prepare-release');
 require('./publish-release');

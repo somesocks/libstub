@@ -4,6 +4,6 @@ const gulp = require('gulp');
 gulp.task(
 	'build',
 	'build',
-	[ 'clean' ],
+	[ 'clean', 'docs' ],
 	() => gulp.src('./src/*.js').pipe(gulp.dest('./dist'))
 );
