@@ -2,7 +2,7 @@
 
 libstub is a tiny UMD module that uses the global namespace to dynamically link dependencies between JS bundles.
 
-Why? Mostly to help link together JS, independent of how it was built.
+Why? To help link together JS lebs, independent of how they were built.
 
 # Usage
 
@@ -13,28 +13,23 @@ Why? Mostly to help link together JS, independent of how it was built.
 
   var a = {};
 
-  libstub.provide('a', a);
+  libstub.export('a', a);
 
 
   // file b.js, wants to import a and export b
 
-  var a = libstub.consume('a');
+  var a = libstub.import('a');
   var b = {};
 
-  libstub.provide('b', b);
+  libstub.export('b', b);
 
 
   // file c.js, wants to import a and b.
 
-  var a = libstub.consume('a');
-  var b = libstub.consume('b');
+  var a = libstub.import('a');
+  var b = libstub.import('b');
 
 ```
-
-There are two types of JS bundles: providers and consumers.
-Providers export modules for others to use, consumers require modules to be provided to them.
-A bundle can be both a provider and a consumer.
-
 
 
 # API

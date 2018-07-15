@@ -1,6 +1,6 @@
 {
 	"name": "libstub",
-	"version": "0.1.2",
+	"version": "1.0.0",
 	"description": "a tiny utility for helping to link js packages at run-time",
 	"main": "dist/libstub",
 	"files": [
@@ -22,6 +22,8 @@
 		"url": "https://github.com/somesocks/libstub/issues"
 	},
 	"homepage": "https://github.com/somesocks/libstub",
+	"dependencies": {
+	},
 	"devDependencies": {
 		"babel": "^6.23.0",
 		"babel-core": "^6.26.0",
@@ -37,6 +39,7 @@
 		"glob": "7.1.2",
 		"gulp": "3.9.1",
 		"gulp-help": "1.6.1",
+		"gulp-json-editor": "^2.3.0",
 		"gulp-shell": "0.6.5",
 		"semver": "^5.5.0",
 		"uchain": "^0.14.0",
@@ -44,8 +47,5 @@
 		"vet": "^1.0.3",
 		"webpack": "4.1.1",
 		"webpack-cli": "^2.0.11"
-	},
-	"dependencies": {
-		"gulp-json-editor": "^2.3.0"
 	}
 }

@@ -2,7 +2,7 @@
 
 libstub is a tiny UMD module that uses the global namespace to dynamically link dependencies between JS bundles.
 
-Why? Mostly to help link together JS, independent of how it was built.
+Why? Mostly to help link together JS, independent of how they were built.
 
 # Usage
 
@@ -13,28 +13,23 @@ Why? Mostly to help link together JS, independent of how it was built.
 
   var a = {};
 
-  libstub.provide('a', a);
+  libstub.export('a', a);
 
 
   // file b.js, wants to import a and export b
 
-  var a = libstub.consume('a');
+  var a = libstub.import('a');
   var b = {};
 
-  libstub.provide('b', b);
+  libstub.export('b', b);
 
 
   // file c.js, wants to import a and b.
 
-  var a = libstub.consume('a');
-  var b = libstub.consume('b');
+  var a = libstub.import('a');
+  var b = libstub.import('b');
 
 ```
-
-There are two types of JS bundles: providers and consumers.
-Providers export modules for others to use, consumers require modules to be provided to them.
-A bundle can be both a provider and a consumer.
-
 
 
 # API
@@ -45,13 +40,13 @@ A bundle can be both a provider and a consumer.
 **Kind**: global namespace  
 
 * [libstub](#libstub) : <code>object</code>
-    * [.provide](#libstub.provide)
-    * [.consume](#libstub.consume)
+    * [.export](#libstub.export)
+    * [.import](#libstub.import)
 
-<a name="libstub.provide"></a>
+<a name="libstub.export"></a>
 
-### libstub.provide
-Provide a module to use
+### libstub.export
+export a module to use
 
 **Kind**: static property of [<code>libstub</code>](#libstub)  
 
@@ -60,10 +55,10 @@ Provide a module to use
 | name | the name of the module |
 | module | the module |
 
-<a name="libstub.consume"></a>
+<a name="libstub.import"></a>
 
-### libstub.consume
-Consume a module already provided
+### libstub.import
+import a module already exported
 
 **Kind**: static property of [<code>libstub</code>](#libstub)  
 
@@ -71,4 +66,3 @@ Consume a module already provided
 | --- | --- |
 | name | the name of the module |
 | ignoreMissing | if true, do not throw an error when the module is not found |
-
