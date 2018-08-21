@@ -1,6 +1,6 @@
 {
 	"name": "libstub",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "a tiny utility for helping to link js packages at run-time",
 	"main": "dist/libstub",
 	"files": [
