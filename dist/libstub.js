@@ -9,28 +9,53 @@
 }(typeof self !== 'undefined' ? self : this, function (_r) {
 
 	function _ls() {
-		this._cache = {};
+		var self = this;
+		self._cache = {};
 
-		this.import = function (_n, _l) {
-			_l = this._cache[_n] || _r[_n] || _l;
-			if (!_l) { throw new Error('libstub: no module ' + _n); }
-			if (_l.__libstub_lazy) { _l = _l(); }
-			this._cache[_n] = _l;
-			return _l;
+		self.import = function (n, l) {
+			if (n && typeof n === 'object') {
+				if (Object.prototype.toString.call(n) === '[object Array]') {
+					for (var i = 0; i < n.length; i++) {
+						n[i] = self.import(n[i]);
+					}
+				} else {
+					for (var k in n) {
+						if (n.hasOwnProperty(k)) {
+							n[k] = self.import(k, n[k]);
+						}
+					}
+				}
+				return n;
+			}
+
+			l = self._cache[n] || _r[n] || l;
+			if (!l) { throw new Error('libstub: no module ' + n); }
+			if (l.__libstub_lazy) { l = l(); }
+			self._cache[n] = l;
+			return l;
 		};
 
-		this.export = function (_n, _l) {
-			_l = this._cache[_n] || _r[_n] || _l;
-			this._cache[_n] = _l;
-			return _l;
+		self.export = function (n, l) {
+			if (n && typeof n === 'object') {
+				for (let k in n) {
+					if (n.hasOwnProperty(k)) {
+						n[k] = self.export(k, n[k]);
+					}
+				}
+				return n;
+			}
+
+			l = self._cache[n] || _r[n] || l;
+			self._cache[n] = l;
+			return l;
 		};
 
-		this.lazy = function (_l) {
-			_l.__libstub_lazy = true;
-			return _l;
+		self.lazy = function (l) {
+			l.__libstub_lazy = true;
+			return l;
 		};
 
-		return this;
+		return self;
 	}
 
 	_r.libstub = _r.libstub || new _ls();
