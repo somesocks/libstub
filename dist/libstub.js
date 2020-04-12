@@ -11,9 +11,10 @@
 	function _ls() {
 		this._cache = {};
 
-		this.import = function (_n) {
-			var _l = this._cache[_n] || _r[_n];
+		this.import = function (_n, _l) {
+			_l = this._cache[_n] || _r[_n] || _l;
 			if (!_l) { throw new Error('libstub: no module ' + _n); }
+			if (_l.__libstub_lazy) { _l = _l(); }
 			this._cache[_n] = _l;
 			return _l;
 		};
@@ -21,6 +22,11 @@
 		this.export = function (_n, _l) {
 			_l = this._cache[_n] || _r[_n] || _l;
 			this._cache[_n] = _l;
+			return _l;
+		};
+
+		this.lazy = function (_l) {
+			_l.__libstub_lazy = true;
 			return _l;
 		};
 

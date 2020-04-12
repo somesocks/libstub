@@ -1,6 +1,6 @@
 {
 	"name": "libstub",
-	"version": "2.1.0",
+	"version": "2.3.0",
 	"description": "a tiny utility for helping to link js packages at run-time",
 	"main": "libstub.js",
 	"files": [
@@ -35,6 +35,7 @@
 		"eslint-plugin-jsx-a11y": "6.0.3",
 		"eslint-plugin-react": "7.5.1",
 		"jsdoc-to-markdown": "^5.0.3",
-		"mocha": "^7.1.1"
+		"mocha": "^7.1.1",
+		"vet": "^3.3.4"
 	}
 }
