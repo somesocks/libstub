@@ -30,7 +30,7 @@
 
 			l = self._cache[n] || _r[n] || l;
 			if (!l) { throw new Error('libstub: no module ' + n); }
-			if (l.__libstub_lazy) { l = l(); }
+			if (l.__libstub_lazy) { l = l(self); }
 			self._cache[n] = l;
 			return l;
 		};
