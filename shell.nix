@@ -2,6 +2,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
+	NPM_CONFIG_PREFIX = toString ./.npm;
 in pkgs.mkShell {
 
 	buildInputs = [
@@ -9,7 +10,11 @@ in pkgs.mkShell {
 		pkgs.gnumake
 	];
 
-	# shellHook = ''
-	# '';
+	inherit NPM_CONFIG_PREFIX;
+
+	shellHook = ''
+	export PATH="${NPM_CONFIG_PREFIX}/bin:$PATH";
+	./tasks/setup-pnpm.sh
+	'';
 
 }
